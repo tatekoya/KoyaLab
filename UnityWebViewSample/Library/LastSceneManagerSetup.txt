@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/UniWebView/Demo/1.Basic/1.Basic.unity
-  isLoaded: 1
-  isActive: 1
