@@ -1,11 +1,15 @@
 
 import React, {Fragment} from 'react';
-
 import { StyleSheet, Text} from 'react-native';
-
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import CounterView from "../components/CounterView";
+import { NavigationScreenProp } from 'react-navigation';
 
-class DetailScreen extends React.Component {
+interface Props {
+  navigation: NavigationScreenProp<null>;
+}
+
+class DetailScreen extends React.Component<Props> {
   render(){
     const {navigation} = this.props;
     const itemId = navigation.getParam('itemId','NO-ID');
@@ -17,6 +21,9 @@ class DetailScreen extends React.Component {
           <Container style={styles.body}>
             <Text>itemId:{JSON.stringify(itemId)}</Text>
             <Text>otherParam:{JSON.stringify(otherParam)}</Text>
+            
+            <CounterView />
+
             <Container style={styles.body}>
               <Button success style={styles.button} onPress={() => { this.props.navigation.navigate('Home') }}>
                 <Text>main page</Text>
@@ -28,6 +35,7 @@ class DetailScreen extends React.Component {
                 <Text>go back</Text>
               </Button>
             </Container>
+
           </Container>
         </Container>
       </Fragment>

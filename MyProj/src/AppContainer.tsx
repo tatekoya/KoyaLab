@@ -4,10 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-
-// import screens
-import DetailScreen from './DetailScreen';
-import HomeScreen from './HomeScreen';
+import DetailScreen from './screens/DetailScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const AppNavigator = createStackNavigator(
   {

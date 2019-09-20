@@ -1,11 +1,15 @@
 
-import React, { Fragment } from 'react';
-
-import { StyleSheet, Text, RefreshControl, } from 'react-native';
-
+import React, { Fragment, Component } from 'react';
+import { View, StyleSheet, Text, RefreshControl, } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import Counter from '../containers/Counter';
+import { NavigationScreenProp } from 'react-navigation';
 
-class HomeScreen extends React.Component {
+interface Props {
+  navigation: NavigationScreenProp<null>;
+}
+
+class HomeScreen extends React.Component<Props> {
   static navigationOptions = {
     title: 'Home',
   }
@@ -13,6 +17,7 @@ class HomeScreen extends React.Component {
     return (
       <Fragment>
         <Container style={styles.body}>
+          <Text>遷移するテストボタン</Text>
           <Button
             warning
             style={styles.button}
@@ -25,6 +30,7 @@ class HomeScreen extends React.Component {
           >
             <Text>details page</Text>
           </Button>
+            <Counter />
         </Container>
       </Fragment>
     );
